@@ -34,3 +34,6 @@ img {
     font-size: larger;
     cursor: pointer;
 }
+.pokemon-options img:hover {
+    border: 2px solid black;
+}
