@@ -50,10 +50,10 @@ capturePokemon();
   // do any needed work with the value(s)
   // update DOM to reflect new value(s)
 submitBtn.addEventListener('click', () => {
-    let pickedPokemonId = `${input[type="radio"]:checked}`;
+    const selectedPokemon = document.querySelector('input[type="radio"]:checked');
+    const userChoice = selectedPokemon.value; //id of selected pokemon returns//
     if (totalPlays < 10){
         capturePokemon();
-        console.log(totalPlays);
     } else {
         location.window.replace('./results/index.html'); //add in results page//
     }

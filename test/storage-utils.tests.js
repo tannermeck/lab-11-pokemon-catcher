@@ -1,16 +1,13 @@
 const test = QUnit.test;
 
 // name your test by what it is testing
-test('time to test a function', (expect) => {
-    //Arrange
-    // Set up your arguments and expectations
-    const expected = true;
+test('when pokemon is selected, shown increases', (expect) => {
+    const fakePokemon = {
+        id: 1,
+        shown: 1,
+        preferred: 0
+    };
+    const expected = encounterPokemon(1);
     
-    //Act 
-    // Call the function you're testing and set the result to a const
-    const actual = true; // use your function here
-
-    //Expect
-    // Make assertions about what is expected versus the actual result
-    expect.equal(actual, expected);
+    expect.deepequal(fakePokemon, expected);
 });
