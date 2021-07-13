@@ -6,3 +6,31 @@ header {
 main {
     background-color: tan;
 }
+input[type="radio"] {
+    display:none;
+}
+input[type="radio"]:checked + img {
+    border: 2px solid black;
+    filter: none;
+}
+.pokemon-options {
+    margin: 40px;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+img {
+    height: 400px;
+    width: 400px;
+    filter:grayscale(80%);
+}
+.button {
+    display: flex;
+    justify-content: center;
+}
+#submit-button {
+    height: 50px;
+    width: 200px;
+    font-size: larger;
+    cursor: pointer;
+}
