@@ -7,7 +7,16 @@ export function findById(items, id){
 }
 
 export function encounterPokemon(id){
-    const pokemonString = localStorage.getItem('POKEMONGO');
-    const pokemonParse = JSON.parse(pokemonString);
-    const 
+    const resultsString = localStorage.getItem('POKEMONGO') || '[]';
+    const results = JSON.parse(resultsString);
+    const item = findById(results, id);
+    if (!item) {
+        const newItem = {
+            id: 1,
+            shown: 1,
+            preferred: 0
+        }; results.push(newItem);
+    } else {
+        item.shown++;
+    } localStorage.setItem('POKEMONGO', JSON.stringify(results));
 }
