@@ -2,3 +2,13 @@ h1 {
     display:flex;
     justify-content: center;
 }
+img {
+    height: 200px;
+    width: 200px;
+}
+.results-section {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 100px;
+    margin-right: 100px;
+}
