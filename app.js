@@ -45,18 +45,16 @@ export function capturePokemon(){
 }
   
 capturePokemon();
-// set event listeners 
-  // get user input(s)
-  // do any needed work with the value(s)
-  // update DOM to reflect new value(s)
+
 submitBtn.addEventListener('click', () => {
     const selectedPokemon = document.querySelector('input[type="radio"]:checked');
-    const userChoice = selectedPokemon.value; //id of selected pokemon returns//
-    console.log(userChoice);
+    const userChoice = selectedPokemon.value; 
+    
+    
     if (totalPlays < 10){
         capturePokemon();
     } else {
-        location.window.replace('./results/index.html'); //add in results page//
+        window.location.replace('./results/index.html');
     }
   
 });
