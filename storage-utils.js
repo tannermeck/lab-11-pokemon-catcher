@@ -30,3 +30,10 @@ export function getPokedex(){
 export function setPokedex(results){
     localStorage.setItem('POKEMONGO', JSON.stringify(results));
 }
+
+export function capturePokemon(id){
+    const results = getPokedex();
+    const item = findById(results, id);
+    item.preferred++;
+    setPokedex(results);
+}

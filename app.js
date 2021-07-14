@@ -1,6 +1,6 @@
 // import functions
 import pokemonArray from './data/pokemon.js';
-
+import { capturePokemon, encounterPokemon } from './storage-utils.js';
 // reference needed DOM elements
 const radio1 = document.getElementById('pokemon1-radio');
 const image1 = document.getElementById('pokemon1-image');
@@ -14,7 +14,7 @@ const submitBtn = document.getElementById('submit-button');
 
 let totalPlays = 0;
 
-export function capturePokemon(){
+export function renderPokemon(){
     totalPlays++;
     let randNum1 = Math.floor(Math.random() * pokemonArray.length);
     let randNum2 = Math.floor(Math.random() * pokemonArray.length);
@@ -32,27 +32,32 @@ export function capturePokemon(){
     radio1.value = pokemon1.id;
     radio1.checked = false;
     image1.src = pokemon1.url_image;
+    encounterPokemon(pokemon1.id);
 
     radio2.value = pokemon2.id;
     radio2.checked = false;
     image2.src = pokemon2.url_image;
+    encounterPokemon(pokemon2.id);
+
 
     radio3.value = pokemon3.id;
     radio3.checked = false;
     image3.src = pokemon3.url_image;
-    
+    encounterPokemon(pokemon3.id);
+
   
 }
   
-capturePokemon();
+localStorage.removeItem('POKEMONGO');
+renderPokemon();
 
 submitBtn.addEventListener('click', () => {
     const selectedPokemon = document.querySelector('input[type="radio"]:checked');
-    const userChoice = selectedPokemon.value; 
-    
+    const userChoice = Number(selectedPokemon.value); 
+    capturePokemon(userChoice);
     
     if (totalPlays < 10){
-        capturePokemon();
+        renderPokemon();
     } else {
         window.location.replace('./results/index.html');
     }
