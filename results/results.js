@@ -5,7 +5,7 @@ import { getPokedex, findById } from '../storage-utils.js';
 const resultList = document.getElementById('result-list');
 const results = getPokedex();
 for (let item of results){
-    const pokemon = findById(pokemonArray, item.id) //FOR CHART??
+    const pokemon = findById(pokemonArray, item.id);
        
     const resultImg = document.createElement('img');
     resultImg.src = pokemon.url_image;
