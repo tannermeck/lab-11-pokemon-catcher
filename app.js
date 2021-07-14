@@ -52,6 +52,7 @@ capturePokemon();
 submitBtn.addEventListener('click', () => {
     const selectedPokemon = document.querySelector('input[type="radio"]:checked');
     const userChoice = selectedPokemon.value; //id of selected pokemon returns//
+    console.log(userChoice);
     if (totalPlays < 10){
         capturePokemon();
     } else {

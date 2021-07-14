@@ -12,11 +12,12 @@ export function encounterPokemon(id){
     const item = findById(results, id);
     if (!item) {
         const newItem = {
-            id: 1,
+            id: id,
             shown: 1,
             preferred: 0
         }; results.push(newItem);
     } else {
         item.shown++;
-    } localStorage.setItem('POKEMONGO', JSON.stringify(results));
+    } 
+    localStorage.setItem('POKEMONGO', JSON.stringify(results));
 }
