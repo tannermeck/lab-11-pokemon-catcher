@@ -41,3 +41,10 @@ a {
     text-decoration: none;
     color:aqua;
 }
+#plays-left {
+    padding-left: 10px;
+}
+#total {
+    padding-left: 10px;
+    font-weight: bolder;
+}
