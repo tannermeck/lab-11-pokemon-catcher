@@ -12,9 +12,10 @@ img {
 }
 #result-list {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
     padding: 15px;
+    border: solid 2px black;
 }
 p {
     font-size: larger;
