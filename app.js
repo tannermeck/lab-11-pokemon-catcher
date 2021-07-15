@@ -11,6 +11,7 @@ const image2 = document.getElementById('pokemon2-image');
 const radio3 = document.getElementById('pokemon3-radio');
 const image3 = document.getElementById('pokemon3-image');
 const submitBtn = document.getElementById('submit-button');
+const playsLeft = document.getElementById('plays-left');
 
 let totalPlays = 0;
 
@@ -45,7 +46,7 @@ export function renderPokemon(){
     image3.src = pokemon3.url_image;
     encounterPokemon(pokemon3.id);
 
-  
+    playsLeft.textContent = `${totalPlays - 1}/10`;
 }
   
 localStorage.removeItem('POKEMONGO');
