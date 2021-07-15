@@ -7,8 +7,7 @@ export function findById(items, id){
 }
 
 export function encounterPokemon(id){
-    const resultsString = localStorage.getItem('POKEMONGO') || '[]';
-    const results = JSON.parse(resultsString);
+    const results = getPokedex();
     const item = findById(results, id);
     if (!item) {
         const newItem = {
@@ -19,5 +18,22 @@ export function encounterPokemon(id){
     } else {
         item.shown++;
     } 
+    setPokedex(results);
+}
+
+export function getPokedex(){
+    const resultsString = localStorage.getItem('POKEMONGO') || '[]';
+    const results = JSON.parse(resultsString);
+    return results;
+}
+
+export function setPokedex(results){
     localStorage.setItem('POKEMONGO', JSON.stringify(results));
+}
+
+export function capturePokemon(id){
+    const results = getPokedex();
+    const item = findById(results, id);
+    item.preferred++;
+    setPokedex(results);
 }

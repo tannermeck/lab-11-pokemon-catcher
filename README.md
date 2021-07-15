@@ -1,14 +1,32 @@
 # Alchemy Dev 101 Template
 
 ## Making a plan!
+## STATE
+* Show 3 pokemon 10 times.
+* Pokemon displayed cannot repeat in one turn.
+* Pick one pokemon each time.
 
-1) Make a drawing of your app. Simple "wireframes"
-2) Once you have a drawing, name the HTML elements you'll need to realize your vision
-3) For each HTML element ask: Why do I need this?
-4) Once we know _why_ we need each element, think about how to implement the "Why" as a "How"
-5) Is there some state we need to initialize?
-6) Find all the 'events' (user clicks, form submit, etc) in your app. Ask one by one, "What happens when" for each of these events.
-7) Think about how to validate each of your steps
-8) Consider your data model. What objects will you be using? What are the key/value pairs? What arrays do you need? What needs to live in local storage?
-9) Consider what features _depend_ on what other features. Use this dependency logic to figure out what order to complete tasks.
+
+## DATA
+* A list of pokemon displaying only the image.
+* On results page, pull information saved to local storage and go through each item to list the image that was shown, how many times it was captured(selected), and how many times the viewer viewed the image.
+
+## EVENTS
+* Submit button to select preferred pokemon, update preferred via getPokedex function.
+* Submit button also increments total plays to 10.
+* Generate new pokemon after clicked, via renderPokemon function.
+
+## FUNCTIONS
+* RenderPokemon to create random draws that are nonduplicating per draw, matching the random number to the pokemon's id.
+* setPokedex to store the information on local storage.
+* getPokedex to remove the stored information from local storage.
+* encounterPokemon to create an object for our results page and upload to local storage.
+* capturePokemon to increment the preferred pokemon at each button click.
+
+### HTML
+* 3 label elements to hold both the input and image tags within.
+* label elements wrapped in a div for semantic html.
+* div with a button added for selection submission.
+* results page section tag to hold a div tag containing an image and 3 p tags for the name of the pokemon, encounter, and capture.
+
 

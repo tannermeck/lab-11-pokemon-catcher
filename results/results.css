@@ -1,0 +1,28 @@
+body {
+    background-color: tan;
+}
+h1 {
+    display:flex;
+    justify-content: center;
+}
+img {
+    height: 200px;
+    width: 200px;
+    padding: 15px;
+}
+#result-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 15px;
+    border: solid 2px black;
+}
+p {
+    font-size: larger;
+    font-weight: bolder;
+}
+a {
+    text-decoration: none;
+    color:aqua;
+    cursor: pointer;
+}

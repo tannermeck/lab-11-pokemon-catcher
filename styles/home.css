@@ -37,3 +37,7 @@ img {
 .pokemon-options img:hover {
     border: 2px solid black;
 }
+a {
+    text-decoration: none;
+    color:aqua;
+}
