@@ -4,9 +4,15 @@ import { getPokedex, findById } from '../storage-utils.js';
 
 const resultList = document.getElementById('result-list');
 const results = getPokedex();
+let names = [];
+let shown = [];
+let capture = [];
 for (let item of results){
     const pokemon = findById(pokemonArray, item.id);
-    
+    names.push(pokemon.pokemon);
+    shown.push(item.shown);
+    capture.push(item.preferred);
+
     const resultImg = document.createElement('img');
     resultImg.src = pokemon.url_image;
 
@@ -29,3 +35,34 @@ for (let item of results){
     
     resultList.appendChild(resultDiv);
 }
+
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: names,
+        datasets: [{
+            label: '# of Encountered Pokemon',
+            data: shown,
+            backgroundColor: [
+                'red'
+            ],
+            borderWidth: 1
+        },
+        {
+            label: '# of Captured Pokemon',
+            data: capture,
+            backgroundColor: [
+                'blue'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
