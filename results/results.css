@@ -26,3 +26,7 @@ a {
     color:aqua;
     cursor: pointer;
 }
+canvas {
+    width: 75%;
+    height: 500px;
+}
