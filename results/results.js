@@ -19,7 +19,7 @@ for (let item of results){
     const captured = document.createElement('p');
     captured.textContent = `Captured: ${item.preferred}`;
     
-    const resultDiv = document.createElement('div'); //explain classList.add ??
+    const resultDiv = document.createElement('div'); 
     resultDiv.classList.add('result');
 
     resultDiv.appendChild(resultImg);
